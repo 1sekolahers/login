@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Login</title>
+    <style>
+        /* CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Container untuk login dan konten */
+        .container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Konten */
+        .content {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Tautan "Klik Disini" */
+        .register-link {
+            margin-top: 10px;
+        }
+
+        /* Responsif */
+        @media (min-width: 768px) {
+            /* Style untuk mode desktop */
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .content {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Silakan Login</h2>
+        <form onsubmit="return false;">
+            Username: <input type="text" id="username" name="username"><br>
+            Password: <input type="password" id="password" name="password"><br>
+            <div class="register-link">Belum Punya Akun <a href="https://wa.me">Klik Disini</a></div><br/>
+            <input type="submit" value="Login" onclick="login()">
+        </form>
+    </div>
+
+    <div id="contentA" class="content" style="display: none;">
+        <!-- Isi dari Konten A -->
+        <h2>Selamat datang di Konten A</h2>
+        <p>Teks dalam Konten A yang rata kiri.</p>
+    </div>
+
+    <div id="contentB" class="content" style="display: none;">
+        <!-- Isi dari Konten B -->
+        <h2>Selamat datang di Konten B</h2>
+        <p>Teks dalam Konten B yang rata kiri.</p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var loginPage = document.querySelector('.container');
+            var contentA = document.getElementById('contentA');
+            var contentB = document.getElementById('contentB');
+
+            if (username === 'ikan' && password === '111') {
+                // Tampilkan Konten A jika login berhasil
+                loginPage.style.display = 'none';
+                contentA.style.display = 'block';
+            } else if (username === 'sapi' && password === '222') {
+                // Tampilkan Konten B jika login berhasil
+                loginPage.style.display = 'none';
+                contentB.style.display = 'block';
+            } else {
+                alert('Username atau password salah. Silakan coba lagi.');
+            }
+        }
+    </script>
+</body>
+</html>
