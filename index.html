@@ -22,6 +22,9 @@
             text-align: center;
             padding: 20px;
             margin: 10px;
+            /* Tambahkan lebar maksimum untuk mode desktop */
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         form {
@@ -62,6 +65,9 @@
             text-align: left;
             padding: 20px;
             margin: 10px;
+            /* Tambahkan lebar maksimum untuk mode desktop */
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Tautan "Klik Disini" */
@@ -72,25 +78,16 @@
         /* Responsif */
         @media (min-width: 768px) {
             /* Style untuk mode desktop */
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-            .content {
-                max-width: 600px;
-                margin: 0 auto;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Silakan Login</h2>
+        <div class="register-link">Belum Punya Akun <a href="https://wa.me">Klik Disini</a></div>
         <form onsubmit="return false;">
             Username: <input type="text" id="username" name="username"><br>
             Password: <input type="password" id="password" name="password"><br>
-            <div class="register-link">Belum Punya Akun <a href="https://wa.me">Klik Disini</a></div><br/>
             <input type="submit" value="Login" onclick="login()">
         </form>
     </div>
@@ -129,4 +126,5 @@
         }
     </script>
 </body>
-</html>
+        </html>
+        
